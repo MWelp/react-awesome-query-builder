@@ -126,6 +126,9 @@ export default (props) => {
       <TextField 
         variant="standard"
         {...params}
+        // since v9 `params.fullWidth` reflects `fullWidth` of Autocomplete (was always true before),
+        // but input should always fill Autocomplete (its width is controlled by `style`)
+        fullWidth={true}
         {...(useSlotProps ? {
           slotProps: {
             ...params.slotProps,
