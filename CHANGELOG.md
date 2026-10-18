@@ -6,6 +6,7 @@
   - Added customized modals to confirm item deleteion for Fluent, Bootstrap (PR #1188)
   - Added some missing type declarations. Restored support of AntDesign v4 (PR #1264)
   - Added `showSelectedValueSourceLabel` to config settings (PR #1272) (issue #1144)
+  - Added support of MUI v7 and v9 and `@mui/x-date-pickers` v8 and v9. Dropped `@mui/base` from peer dependencies of `@react-awesome-query-builder/mui`
 - 6.6.15
   - Fixed support of AntDesign 4.x DatePicker (PR #1239) (issue #1238)
   - Prevent potential prototype pollution in `OtherUtils.mergeIn` and `OtherUtils.setIn` (PR #1240)

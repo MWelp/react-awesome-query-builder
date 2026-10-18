@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
+import { textFieldInputProps } from "../../utils/versions";
 
 export default (props) => {
   const {config, placeholders, customProps, value, setValue, min, max, step, marks, readonly, textSeparators} = props;
@@ -88,14 +89,13 @@ export default (props) => {
       type="number"
       value={valueFrom}
       placeholder={placeholders[0]}
-      InputProps={{
+      {...textFieldInputProps({
         readOnly: readonly,
-      }}
-      inputProps={{
+      }, {
         min: min,
         max: max,
         step: step,
-      }}
+      })}
       disabled={readonly}
       onChange={handleInputChangeFrom}
       onBlur={handleInputBlur}
@@ -110,14 +110,13 @@ export default (props) => {
       type="number"
       value={valueTo}
       placeholder={placeholders[1]}
-      InputProps={{
+      {...textFieldInputProps({
         readOnly: readonly,
-      }}
-      inputProps={{
+      }, {
         min: min,
         max: max,
         step: step,
-      }}
+      })}
       disabled={readonly}
       onChange={handleInputChangeTo}
       onBlur={handleInputBlur}
