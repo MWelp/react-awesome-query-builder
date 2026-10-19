@@ -65,7 +65,7 @@ export default (props) => {
   // marks example: { 0: "0%", 100: React.createElement('strong', null, "100%") }
   const muiMarks = marks ? Object.keys(marks).map(v => ({
     value: Number(v),
-    label: typeof marks[v] === "object" || typeof marks[v] === "undefined" ? marks[v] : <p>{marks[v]}</p>
+    label: marks[v]
   })) : false;
 
 
@@ -140,8 +140,11 @@ export default (props) => {
     />
   );
 
+  // tip: align to top, so the slider rail is on the same level as the inputs,
+  //      and mark labels (if any) are placed below without overflowing the rule
   const stylesWrapper = {
     display: "inline-flex", 
+    alignItems: "flex-start",
     flexWrap: "wrap"
   };
 
@@ -152,7 +155,6 @@ export default (props) => {
   const stylesSliderWrapper = {
     marginLeft: "5px", 
     paddingLeft: "12px", 
-    marginBottom: muiMarks && "-16px", 
     width: width || defaultSliderWidth,
   };
 
