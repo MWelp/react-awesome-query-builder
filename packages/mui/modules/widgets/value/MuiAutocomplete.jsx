@@ -199,9 +199,10 @@ export default (props) => {
   };
 
   const renderTags = (value, getItemProps) => value.map((option, index) => {
-    const { key: _key, ...itemProps } = getItemProps({ index });
+    // tip: `option` can be a primitive value, so use `key` provided by MUI (should not be spread into JSX)
+    const { key, ...itemProps } = getItemProps({ index });
     return <Chip
-      key={option.value}
+      key={key ?? index}
       label={getOptionLabel(option)}
       size={"small"}
       variant={getOptionIsCustom(option) ? "outlined" : "filled"}
